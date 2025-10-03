@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>منصة مركز تنمية القدرات - العرض التفاعلي</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      // Protection layer
+      document.addEventListener('contextmenu', event => event.preventDefault());
+      document.addEventListener('keydown', event => {
+          if (event.keyCode === 123 || (event.ctrlKey && event.shiftKey && (event.keyCode === 73 || event.keyCode === 74)) || (event.ctrlKey && event.keyCode === 85)) {
+              event.preventDefault();
+          }
+      });
+      
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'primary-stone': '#44403c',
+              'trust-blue': '#1f22c6',
+              'accent-amber': '#f4d127',
+              'soft-sand': '#f5f5f4',
+              'highlight-cyan': '#2fd3ec',
+              'highlight-emerald': '#10b981',
+            }
+          }
+        }
+      }
+    </script>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.22.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "recharts": "https://aistudiocdn.com/recharts@^3.2.1"
+  }
+}
+</script>
+</head>
+  <body class="bg-soft-sand">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
